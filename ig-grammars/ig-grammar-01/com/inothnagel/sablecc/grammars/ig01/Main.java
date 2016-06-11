@@ -33,5 +33,7 @@ public class Main {
         Parser p = new Parser(new Lexer(new PushbackReader(new InputStreamReader(System.in), 1024)));
         Start tree = p.parse();
         System.out.println("tree: " + tree);
+
+        tree.apply(new Interpreter());
     }
 }
