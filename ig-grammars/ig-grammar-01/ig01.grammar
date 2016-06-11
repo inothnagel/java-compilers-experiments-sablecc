@@ -1,9 +1,9 @@
-Package com.inothnagel.sablecc.grammars.ig01;
+Package com.inothnagel.sablecc.grammars.ig01.generated;
 
 Tokens
     number = 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight' | 'nine' | 'zero';
-	plus = 'plus';
-	minus = 'minus';
+	add = 'plus';
+	min = 'minus';
 	div = 'divided by';
 	mul = 'multiplied by';
 	blank = (' ' | 13 | 10)+;
@@ -12,7 +12,8 @@ Ignored Tokens
 	blank;
 
 Productions
-	sentence =
-	    {plus} [n1]:number plus [n2]:number |
-	    {minus} [n1]:number minus [n2]:number |
+	expression =
+	    {add} [n1]:number add [n2]:number |
+	    {min} [n1]:number min [n2]:number |
+	    {mul} [n1]:number mul [n2]:number |
 	    {div} [n1]:number div [n2]:number;
