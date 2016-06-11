@@ -29,10 +29,10 @@ public class Main {
     }
 
     public static void parse() throws ParserException, IOException, LexerException {
-        System.out.println("Hello!");
+        System.out.println("Write an arithmetic expression in English below and then hit Return followed by EOF (cmd+d):");
         Parser p = new Parser(new Lexer(new PushbackReader(new InputStreamReader(System.in), 1024)));
         Start tree = p.parse();
-        System.out.println("tree: " + tree);
+//        System.out.println("tree: " + tree);
 
         tree.apply(new Interpreter());
     }

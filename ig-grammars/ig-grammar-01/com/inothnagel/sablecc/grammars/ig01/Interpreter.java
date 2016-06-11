@@ -32,6 +32,22 @@ public class Interpreter extends DepthFirstAdapter {
         System.out.print(")");
     }
 
+    public void inAAddExpression(AAddExpression node) {
+        System.out.print("(");
+    }
+
+    public void outAAddExpression(AAddExpression node) {
+        System.out.print(")");
+    }
+
+    public void inAMinExpression(AMinExpression node) {
+        System.out.print("(");
+    }
+
+    public void outAMinExpression(AMinExpression node) {
+        System.out.print(")");
+    }
+
     public void caseTAdd(TAdd node) {
         System.out.print("+");
     }
