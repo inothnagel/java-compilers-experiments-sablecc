@@ -60,7 +60,7 @@ fabric.properties
 hs_err_pid*
 
 sablecc-3.7.zip
-sablecc-3.7/*
+sablecc/*
 sablecc-grammars-2.0.0.zip
 sablecc-grammars-2.0.0/*
 ig-grammars/ig-grammar-01/.idea/*
