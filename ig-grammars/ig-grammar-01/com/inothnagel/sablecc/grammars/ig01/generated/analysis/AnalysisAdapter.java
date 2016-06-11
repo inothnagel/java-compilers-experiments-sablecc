@@ -75,6 +75,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseATermExpression(ATermExpression node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAAddExpression(AAddExpression node)
     {
         defaultCase(node);
@@ -87,13 +93,25 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAMulExpression(AMulExpression node)
+    public void caseAFactorTerm(AFactorTerm node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADivExpression(ADivExpression node)
+    public void caseAMulTerm(AMulTerm node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADivTerm(ADivTerm node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseANumberFactor(ANumberFactor node)
     {
         defaultCase(node);
     }

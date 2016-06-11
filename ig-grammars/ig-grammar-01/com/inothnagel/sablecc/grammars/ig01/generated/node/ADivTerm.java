@@ -5,56 +5,56 @@ package com.inothnagel.sablecc.grammars.ig01.generated.node;
 import com.inothnagel.sablecc.grammars.ig01.generated.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AMulExpression extends PExpression
+public final class ADivTerm extends PTerm
 {
-    private TNumber _n1_;
-    private TMul _mul_;
-    private TNumber _n2_;
+    private PTerm _term_;
+    private TDiv _div_;
+    private PFactor _factor_;
 
-    public AMulExpression()
+    public ADivTerm()
     {
         // Constructor
     }
 
-    public AMulExpression(
-        @SuppressWarnings("hiding") TNumber _n1_,
-        @SuppressWarnings("hiding") TMul _mul_,
-        @SuppressWarnings("hiding") TNumber _n2_)
+    public ADivTerm(
+        @SuppressWarnings("hiding") PTerm _term_,
+        @SuppressWarnings("hiding") TDiv _div_,
+        @SuppressWarnings("hiding") PFactor _factor_)
     {
         // Constructor
-        setN1(_n1_);
+        setTerm(_term_);
 
-        setMul(_mul_);
+        setDiv(_div_);
 
-        setN2(_n2_);
+        setFactor(_factor_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AMulExpression(
-            cloneNode(this._n1_),
-            cloneNode(this._mul_),
-            cloneNode(this._n2_));
+        return new ADivTerm(
+            cloneNode(this._term_),
+            cloneNode(this._div_),
+            cloneNode(this._factor_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAMulExpression(this);
+        ((Analysis) sw).caseADivTerm(this);
     }
 
-    public TNumber getN1()
+    public PTerm getTerm()
     {
-        return this._n1_;
+        return this._term_;
     }
 
-    public void setN1(TNumber node)
+    public void setTerm(PTerm node)
     {
-        if(this._n1_ != null)
+        if(this._term_ != null)
         {
-            this._n1_.parent(null);
+            this._term_.parent(null);
         }
 
         if(node != null)
@@ -67,19 +67,19 @@ public final class AMulExpression extends PExpression
             node.parent(this);
         }
 
-        this._n1_ = node;
+        this._term_ = node;
     }
 
-    public TMul getMul()
+    public TDiv getDiv()
     {
-        return this._mul_;
+        return this._div_;
     }
 
-    public void setMul(TMul node)
+    public void setDiv(TDiv node)
     {
-        if(this._mul_ != null)
+        if(this._div_ != null)
         {
-            this._mul_.parent(null);
+            this._div_.parent(null);
         }
 
         if(node != null)
@@ -92,19 +92,19 @@ public final class AMulExpression extends PExpression
             node.parent(this);
         }
 
-        this._mul_ = node;
+        this._div_ = node;
     }
 
-    public TNumber getN2()
+    public PFactor getFactor()
     {
-        return this._n2_;
+        return this._factor_;
     }
 
-    public void setN2(TNumber node)
+    public void setFactor(PFactor node)
     {
-        if(this._n2_ != null)
+        if(this._factor_ != null)
         {
-            this._n2_.parent(null);
+            this._factor_.parent(null);
         }
 
         if(node != null)
@@ -117,37 +117,37 @@ public final class AMulExpression extends PExpression
             node.parent(this);
         }
 
-        this._n2_ = node;
+        this._factor_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._n1_)
-            + toString(this._mul_)
-            + toString(this._n2_);
+            + toString(this._term_)
+            + toString(this._div_)
+            + toString(this._factor_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._n1_ == child)
+        if(this._term_ == child)
         {
-            this._n1_ = null;
+            this._term_ = null;
             return;
         }
 
-        if(this._mul_ == child)
+        if(this._div_ == child)
         {
-            this._mul_ = null;
+            this._div_ = null;
             return;
         }
 
-        if(this._n2_ == child)
+        if(this._factor_ == child)
         {
-            this._n2_ = null;
+            this._factor_ = null;
             return;
         }
 
@@ -158,21 +158,21 @@ public final class AMulExpression extends PExpression
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._n1_ == oldChild)
+        if(this._term_ == oldChild)
         {
-            setN1((TNumber) newChild);
+            setTerm((PTerm) newChild);
             return;
         }
 
-        if(this._mul_ == oldChild)
+        if(this._div_ == oldChild)
         {
-            setMul((TMul) newChild);
+            setDiv((TDiv) newChild);
             return;
         }
 
-        if(this._n2_ == oldChild)
+        if(this._factor_ == oldChild)
         {
-            setN2((TNumber) newChild);
+            setFactor((PFactor) newChild);
             return;
         }
 

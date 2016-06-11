@@ -13,7 +13,14 @@ Ignored Tokens
 
 Productions
 	expression =
-	    {add} [n1]:number add [n2]:number |
-	    {min} [n1]:number min [n2]:number |
-	    {mul} [n1]:number mul [n2]:number |
-	    {div} [n1]:number div [n2]:number;
+	    {term} term |
+	    {add} expression add term |
+	    {min} expression min term;
+
+    term =
+        {factor} factor |
+	    {mul} term mul factor |
+	    {div} term div factor;
+
+	factor =
+	    {number} number;

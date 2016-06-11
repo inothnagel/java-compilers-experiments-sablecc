@@ -36,6 +36,27 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outStart(node);
     }
 
+    public void inATermExpression(ATermExpression node)
+    {
+        defaultIn(node);
+    }
+
+    public void outATermExpression(ATermExpression node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseATermExpression(ATermExpression node)
+    {
+        inATermExpression(node);
+        if(node.getTerm() != null)
+        {
+            node.getTerm().apply(this);
+        }
+        outATermExpression(node);
+    }
+
     public void inAAddExpression(AAddExpression node)
     {
         defaultIn(node);
@@ -50,17 +71,17 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
     public void caseAAddExpression(AAddExpression node)
     {
         inAAddExpression(node);
-        if(node.getN2() != null)
+        if(node.getTerm() != null)
         {
-            node.getN2().apply(this);
+            node.getTerm().apply(this);
         }
         if(node.getAdd() != null)
         {
             node.getAdd().apply(this);
         }
-        if(node.getN1() != null)
+        if(node.getExpression() != null)
         {
-            node.getN1().apply(this);
+            node.getExpression().apply(this);
         }
         outAAddExpression(node);
     }
@@ -79,76 +100,118 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
     public void caseAMinExpression(AMinExpression node)
     {
         inAMinExpression(node);
-        if(node.getN2() != null)
+        if(node.getTerm() != null)
         {
-            node.getN2().apply(this);
+            node.getTerm().apply(this);
         }
         if(node.getMin() != null)
         {
             node.getMin().apply(this);
         }
-        if(node.getN1() != null)
+        if(node.getExpression() != null)
         {
-            node.getN1().apply(this);
+            node.getExpression().apply(this);
         }
         outAMinExpression(node);
     }
 
-    public void inAMulExpression(AMulExpression node)
+    public void inAFactorTerm(AFactorTerm node)
     {
         defaultIn(node);
     }
 
-    public void outAMulExpression(AMulExpression node)
+    public void outAFactorTerm(AFactorTerm node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAMulExpression(AMulExpression node)
+    public void caseAFactorTerm(AFactorTerm node)
     {
-        inAMulExpression(node);
-        if(node.getN2() != null)
+        inAFactorTerm(node);
+        if(node.getFactor() != null)
         {
-            node.getN2().apply(this);
+            node.getFactor().apply(this);
+        }
+        outAFactorTerm(node);
+    }
+
+    public void inAMulTerm(AMulTerm node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAMulTerm(AMulTerm node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAMulTerm(AMulTerm node)
+    {
+        inAMulTerm(node);
+        if(node.getFactor() != null)
+        {
+            node.getFactor().apply(this);
         }
         if(node.getMul() != null)
         {
             node.getMul().apply(this);
         }
-        if(node.getN1() != null)
+        if(node.getTerm() != null)
         {
-            node.getN1().apply(this);
+            node.getTerm().apply(this);
         }
-        outAMulExpression(node);
+        outAMulTerm(node);
     }
 
-    public void inADivExpression(ADivExpression node)
+    public void inADivTerm(ADivTerm node)
     {
         defaultIn(node);
     }
 
-    public void outADivExpression(ADivExpression node)
+    public void outADivTerm(ADivTerm node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADivExpression(ADivExpression node)
+    public void caseADivTerm(ADivTerm node)
     {
-        inADivExpression(node);
-        if(node.getN2() != null)
+        inADivTerm(node);
+        if(node.getFactor() != null)
         {
-            node.getN2().apply(this);
+            node.getFactor().apply(this);
         }
         if(node.getDiv() != null)
         {
             node.getDiv().apply(this);
         }
-        if(node.getN1() != null)
+        if(node.getTerm() != null)
         {
-            node.getN1().apply(this);
+            node.getTerm().apply(this);
         }
-        outADivExpression(node);
+        outADivTerm(node);
+    }
+
+    public void inANumberFactor(ANumberFactor node)
+    {
+        defaultIn(node);
+    }
+
+    public void outANumberFactor(ANumberFactor node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseANumberFactor(ANumberFactor node)
+    {
+        inANumberFactor(node);
+        if(node.getNumber() != null)
+        {
+            node.getNumber().apply(this);
+        }
+        outANumberFactor(node);
     }
 }

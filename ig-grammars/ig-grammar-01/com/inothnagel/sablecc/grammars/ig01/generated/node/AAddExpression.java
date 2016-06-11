@@ -7,9 +7,9 @@ import com.inothnagel.sablecc.grammars.ig01.generated.analysis.*;
 @SuppressWarnings("nls")
 public final class AAddExpression extends PExpression
 {
-    private TNumber _n1_;
+    private PExpression _expression_;
     private TAdd _add_;
-    private TNumber _n2_;
+    private PTerm _term_;
 
     public AAddExpression()
     {
@@ -17,16 +17,16 @@ public final class AAddExpression extends PExpression
     }
 
     public AAddExpression(
-        @SuppressWarnings("hiding") TNumber _n1_,
+        @SuppressWarnings("hiding") PExpression _expression_,
         @SuppressWarnings("hiding") TAdd _add_,
-        @SuppressWarnings("hiding") TNumber _n2_)
+        @SuppressWarnings("hiding") PTerm _term_)
     {
         // Constructor
-        setN1(_n1_);
+        setExpression(_expression_);
 
         setAdd(_add_);
 
-        setN2(_n2_);
+        setTerm(_term_);
 
     }
 
@@ -34,9 +34,9 @@ public final class AAddExpression extends PExpression
     public Object clone()
     {
         return new AAddExpression(
-            cloneNode(this._n1_),
+            cloneNode(this._expression_),
             cloneNode(this._add_),
-            cloneNode(this._n2_));
+            cloneNode(this._term_));
     }
 
     @Override
@@ -45,16 +45,16 @@ public final class AAddExpression extends PExpression
         ((Analysis) sw).caseAAddExpression(this);
     }
 
-    public TNumber getN1()
+    public PExpression getExpression()
     {
-        return this._n1_;
+        return this._expression_;
     }
 
-    public void setN1(TNumber node)
+    public void setExpression(PExpression node)
     {
-        if(this._n1_ != null)
+        if(this._expression_ != null)
         {
-            this._n1_.parent(null);
+            this._expression_.parent(null);
         }
 
         if(node != null)
@@ -67,7 +67,7 @@ public final class AAddExpression extends PExpression
             node.parent(this);
         }
 
-        this._n1_ = node;
+        this._expression_ = node;
     }
 
     public TAdd getAdd()
@@ -95,16 +95,16 @@ public final class AAddExpression extends PExpression
         this._add_ = node;
     }
 
-    public TNumber getN2()
+    public PTerm getTerm()
     {
-        return this._n2_;
+        return this._term_;
     }
 
-    public void setN2(TNumber node)
+    public void setTerm(PTerm node)
     {
-        if(this._n2_ != null)
+        if(this._term_ != null)
         {
-            this._n2_.parent(null);
+            this._term_.parent(null);
         }
 
         if(node != null)
@@ -117,25 +117,25 @@ public final class AAddExpression extends PExpression
             node.parent(this);
         }
 
-        this._n2_ = node;
+        this._term_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._n1_)
+            + toString(this._expression_)
             + toString(this._add_)
-            + toString(this._n2_);
+            + toString(this._term_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._n1_ == child)
+        if(this._expression_ == child)
         {
-            this._n1_ = null;
+            this._expression_ = null;
             return;
         }
 
@@ -145,9 +145,9 @@ public final class AAddExpression extends PExpression
             return;
         }
 
-        if(this._n2_ == child)
+        if(this._term_ == child)
         {
-            this._n2_ = null;
+            this._term_ = null;
             return;
         }
 
@@ -158,9 +158,9 @@ public final class AAddExpression extends PExpression
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._n1_ == oldChild)
+        if(this._expression_ == oldChild)
         {
-            setN1((TNumber) newChild);
+            setExpression((PExpression) newChild);
             return;
         }
 
@@ -170,9 +170,9 @@ public final class AAddExpression extends PExpression
             return;
         }
 
-        if(this._n2_ == oldChild)
+        if(this._term_ == oldChild)
         {
-            setN2((TNumber) newChild);
+            setTerm((PTerm) newChild);
             return;
         }
 

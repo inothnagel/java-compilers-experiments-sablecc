@@ -12,10 +12,13 @@ public interface Analysis extends Switch
     void setOut(Node node, Object o);
 
     void caseStart(Start node);
+    void caseATermExpression(ATermExpression node);
     void caseAAddExpression(AAddExpression node);
     void caseAMinExpression(AMinExpression node);
-    void caseAMulExpression(AMulExpression node);
-    void caseADivExpression(ADivExpression node);
+    void caseAFactorTerm(AFactorTerm node);
+    void caseAMulTerm(AMulTerm node);
+    void caseADivTerm(ADivTerm node);
+    void caseANumberFactor(ANumberFactor node);
 
     void caseTNumber(TNumber node);
     void caseTAdd(TAdd node);
