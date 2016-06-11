@@ -2,14 +2,11 @@ Experimenting with a basic "English Language Calculator" interpreter that will r
 expressed in English, interpret the expression, construct and output the standard arithmetic format,
 and produce the correct result.
 
-For example:
-
+Example of desired interpreter behavior:
 ```
-// Example of desired interpreter behavior
-Input:			one plus two multiplied by three divided by four minus five
-Parse Tree:		one plus two multiplied by three divided by four minus five
-Interpretation:	1+((2*3)/4)-5
-Result:			-2.5
+Input:			one plus two minus three multiplied by four divided by five
+Interpretation:	((1+2)-((3*4)/5))
+Result:			-0.6
 ```
 
 ### Todo:
