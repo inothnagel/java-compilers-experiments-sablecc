@@ -1,0 +1,18 @@
+Package com.inothnagel.sablecc.grammars.ig01;
+
+Tokens
+    number = 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight' | 'nine' | 'zero';
+	plus = 'plus';
+	minus = 'minus';
+	div = 'divided by';
+	mul = 'multiplied by';
+	blank = (' ' | 13 | 10)+;
+
+Ignored Tokens
+	blank;
+
+Productions
+	sentence =
+	    {plus} [n1]:number plus [n2]:number |
+	    {minus} [n1]:number minus [n2]:number |
+	    {div} [n1]:number div [n2]:number;
