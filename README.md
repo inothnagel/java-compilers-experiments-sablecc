@@ -1,10 +1,13 @@
 # Experimenting with building compilers and interpreters in Java using SableCC
 
-### Current experiments:
+### Current experiments (see below for sections):
 - English Calculator 
 
-### Future experiments:
+### Ideas for future experiments:
 - Manipulating virtual world objects ("kill the dragon with my bare hands")
+- Fantasy language based programming language
+    - (Sindarin? What do Elven geeks code in?)
+        - (must surely be Pythonic in nature)
 
 ## English Calculator
 Experimenting with an "English Language Calculator" interpreter that
