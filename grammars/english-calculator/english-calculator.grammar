@@ -4,8 +4,8 @@ Tokens
     number = 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight' | 'nine' | 'zero';
 	add = 'plus';
 	min = 'minus';
-	div = 'divided by';
-	mul = 'multiplied by';
+	div = 'divided by' | 'over';
+	mul = 'multiplied by' | 'times';
 	blank = (' ' | 13 | 10)+;
 
 Ignored Tokens

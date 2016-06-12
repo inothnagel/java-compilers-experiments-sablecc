@@ -7,14 +7,14 @@ import com.inothnagel.compilers.sablecc.english_calculator.generated.analysis.*;
 @SuppressWarnings("nls")
 public final class TMul extends Token
 {
-    public TMul()
+    public TMul(String text)
     {
-        super.setText("multiplied by");
+        setText(text);
     }
 
-    public TMul(int line, int pos)
+    public TMul(String text, int line, int pos)
     {
-        super.setText("multiplied by");
+        setText(text);
         setLine(line);
         setPos(pos);
     }
@@ -22,18 +22,12 @@ public final class TMul extends Token
     @Override
     public Object clone()
     {
-      return new TMul(getLine(), getPos());
+      return new TMul(getText(), getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
         ((Analysis) sw).caseTMul(this);
-    }
-
-    @Override
-    public void setText(@SuppressWarnings("unused") String text)
-    {
-        throw new RuntimeException("Cannot change TMul text.");
     }
 }

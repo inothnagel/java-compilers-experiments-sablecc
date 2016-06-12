@@ -434,7 +434,7 @@ public class Parser
     private static String[] errorMessages;
 /*      {
 			"expecting: number",
-			"expecting: 'plus', 'minus', 'divided by', 'multiplied by', EOF",
+			"expecting: 'plus', 'minus', div, mul, EOF",
 			"expecting: 'plus', 'minus', EOF",
         };*/
     private static int[] errors;
