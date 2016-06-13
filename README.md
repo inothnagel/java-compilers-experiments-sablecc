@@ -4,6 +4,7 @@
 - English Calculator 
 
 ### Ideas for future experiments:
+- Visual Shapes Manipulator
 - Manipulating virtual world objects ("kill the dragon with my bare hands")
 - Fantasy language based programming language
     - (Sindarin? What do Elven geeks code in?)
@@ -32,3 +33,25 @@ Result:			-0.6
 ### Done:
 - Generate and parse the grammar
 - Print the interpretation, e.g. "((1+2)-((3*4)/5))"
+
+## Visual Shapes Manipulator
+
+Create a visual display that accepts instructions designed to create and manipulate basic graphic elements:
+
+```
+draw a red dot
+draw a small yellow triangle
+make it green
+make it larger
+make it as small as the dot
+make the red dot disappear
+make the green dot smaller
+double the size of the blue square
+half the size of the ten largest triangles
+make two red dots
+make the smaller red dot green
+make the smaller red dot the same colour as the larger square
+move the red dot upwards
+move the red dot to the yellow square
+draw a polygon with seven sides
+```
