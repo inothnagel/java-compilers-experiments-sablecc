@@ -1,0 +1,19 @@
+Package com.inothnagel.compilers.visual_shapes_manipulator.generated;
+
+Tokens
+    draw = 'draw';
+    a = 'a';
+    the = 'the';
+    color = 'red' | 'green';
+    shape = 'dot' | 'circle' | 'square' | 'triangle';
+    blank = (' ' | 13 | 10)+;
+
+Ignored Tokens
+	blank;
+
+Productions
+    command =
+        {draw} draw noun;
+
+    noun =
+        a color shape;
